@@ -1,0 +1,21 @@
+1 ==> npm init ==> Creates package.json file
+2 ==> npm install cypress@9.7  ===> to install the cypress
+3 ==> npm install npx
+4 ==> npx cypress open ===> to open cypress 
+
+
+//Cypress Folder Structure 
+//by default 4 folders 
+ 1 ) Fixtures ==>  To Store Test Data 
+ 2 ) Integration ==> To write/ store the TC 
+ 3)  plugin ==> To store the external plugins Ex ==> BDD cucumber/Xpath /Fileuplode
+ 4)  Suppots ==> To write out custom commands / Utility
+
+
+ cypress.json ==> To override cypress bydefault congfrigation 
+
+
+ //Selectors supported by cypress ==> CSS Selectors
+
+ //Formula for CSS selector 
+ tagname[Attr = Value]
