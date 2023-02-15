@@ -16,8 +16,7 @@ describe('Varify the login functionality',()=>{
         //Explicit assertions
         cy.url().should('contains','inventory')
         cy.get('.app_logo').should('be.visible')
-        //Mahesh Sunil Aher
-        //Ganesh G kachare
+      
 
     })
 })
