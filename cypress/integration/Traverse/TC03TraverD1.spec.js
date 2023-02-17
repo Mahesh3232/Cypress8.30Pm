@@ -23,5 +23,8 @@ describe('Verify the traverse methods', () => {
     it.only('To get children of DOM elements, use the .children() command.',()=>{
         cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
         cy.get('.container').last().children().should('have.length',3)
+        cy.get('.container').first().children().should('have.length',5)
+        cy.get('.cart').children().should('have.length',6)
+        cy.get('.cart').children().last().should('have.class','cart-preview')
     })
 })
