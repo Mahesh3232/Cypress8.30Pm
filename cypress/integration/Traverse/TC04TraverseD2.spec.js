@@ -12,5 +12,6 @@ describe('Verify the cypress traverse methods', () => {
         cy.get('.search').next().should('have.class', 'cart')
         cy.get('.wrapperone').next().should('have.class', 'wrapperTwo')
         cy.get('.wrapperThree').next().should('have.class', 'action-block')
+        
     })
 })

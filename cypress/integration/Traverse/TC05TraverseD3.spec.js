@@ -19,6 +19,7 @@ describe('Verify cypress traverse methods', () => {
         cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
         cy.get('.blinkingText').parent().should('have.class','cart')
         cy.get('.cart').parent().should('have.class','container')
+        
     })
 
 
