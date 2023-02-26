@@ -7,6 +7,8 @@
 //parent
 //Next()
 //closest()
+//Next all
+//prev
 
 
 
@@ -36,3 +38,10 @@ describe('Verify the cypress traverse methods', () => {
         cy.get('.search').prev().should('have.class','brand')
     })
 })
+
+//.nextUntil()
+//.not()
+//.parents()
+//.parentsUntil()
+//.prevAll()
+//.prevUntil()
