@@ -7,8 +7,19 @@ describe('Verify the cypress traverse methods', () => {
         cy.get('.cart-info').nextUntil('.cart-preview').should('have.length', 1)
     })
 
-    it.only('To get parents DOM element of elements, use the .parents() command.',()=>{
+    it('To get parents DOM element of elements, use the .parents() command.', () => {
         cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
-        cy.get('.cart').parents().should('have.length',4)
+        cy.get('[href="#/offers"]').parents().should('have.class','cart')
+        cy.get('[href="#/offers"]').parents().should('have.class','container')
+        cy.get('[href="#/offers"]').parent().should('have.class','cart')
+        cy.get('.cart').parents().should('have.length',6)
+        cy.get('.mobile-search').parents().should('have.length',7)
+    })
+
+    it.only('To get parents DOM element of elements until other element, use the .parentsUntil() command.',()=>{
+        cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
+        cy.get('[href="#/offers"]').parentsUntil('#root').should('have.length',4)
+        cy.get('.cart-info').parentsUntil('#root').should('have.length',4)
+
     })
 })

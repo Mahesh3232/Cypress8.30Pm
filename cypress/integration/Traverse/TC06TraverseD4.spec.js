@@ -35,9 +35,17 @@ describe('Verify the cypress traverse methods', () => {
     it.only('To get the previous sibling DOM element within elements, use the .prev() command.',()=>{
         cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
         cy.get('.cart-preview').prev().should('have.class','cart-icon')
-        cy.get('.search').prev().should('have.class','brand')
+        cy.get('.search').prev().should('have.class','brand')  
     })
 })
+
+// cy.get('[href="#/offers"]').parents().should('have.class', 'cart')
+// cy.get('.search').parentsUntil('#root').should('have.length', 3)
+// cy.get('.cart-info').parentsUntil('#root').should('have.length', 4)
+// cy.get('.cart > a')
+//     .not('.cart-icon').should('have.length',3)
+
+
 
 //.nextUntil()
 //.not()
