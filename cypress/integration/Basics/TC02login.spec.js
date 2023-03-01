@@ -1,6 +1,7 @@
 
 //AAA ==> Action Arrange Assertions
 describe('Varify the login functionality', () => {
+    //login
     it('Verify the login functionality with valid credentials', () => {
         //Step 1 ==> Visit the Url
         cy.visit('https://www.saucedemo.com/')
@@ -18,6 +19,7 @@ describe('Varify the login functionality', () => {
         //https://www.saucedemo.com/inventory.html
         cy.get('.app_logo').should('be.visible')
         cy.get('.title').should('have.text', 'Products')
+        //logout
     })
 
     it('Verify the login functionality with invalid credentials', () => {
@@ -33,6 +35,8 @@ describe('Varify the login functionality', () => {
         cy.get('h3[data-test="error"]')
             .should('have.text', 'Epic sadface: Username and password do not match any user in this service')
     })
+
+    //logout
 })
 
 //<input id="user-name"></input>
