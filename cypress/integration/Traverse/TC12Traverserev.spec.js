@@ -27,7 +27,7 @@ describe('Verify cypress traverse methods', () => {
         cy.get('.blinkingText').parent().should('have.class','cart')
     })
 
-    it.only('nextAll,Prev', () => {
+    it.only('nextAll', () => {
        cy.get('.decrement').first().nextAll().should('have.length',2)
        cy.get('.products-wrapper').nextAll().should('have.length',3)
     })
