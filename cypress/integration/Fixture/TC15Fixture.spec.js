@@ -3,8 +3,9 @@
 import info from '../../fixtures/Contact_us2'
 
 describe('Verify the fixtures', () => {
-    it('Verify fixtures with normal object', () => {
-        info.forEach((el) => {
+   
+        info.forEach((el,index) => {
+            it(`Verify fixtures with normal object ${index}`, () => {
             cy.visit('https://codenboxautomationlab.com/contact/')
             cy.get('#nf-field-1').type(el.name)
             cy.get('#nf-field-2').type(el.Email)
