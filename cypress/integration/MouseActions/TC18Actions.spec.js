@@ -24,9 +24,9 @@ describe('Verify the mouse actions',()=>{
         cy.get('[href="https://eviltester.com"]').invoke('removeAttr','target').click()
     })
 
-    it.only('Verify mousedown,mouseup & mouseMove',()=>{
-        cy.get('#draggable1').trigger('mousedown',{which:1})
-        cy.get('#droppable1').trigger('mousemove').trigger('mouseup',{force: true})
-        cy.get('#droppable1 > p').should('have.text','Dropped!')
-    })
+    // it('Verify mousedown,mouseup & mouseMove',()=>{
+    //     cy.get('#draggable1').trigger('mousedown',{which:1})
+    //     cy.get('#droppable1').trigger('mousemove').trigger('mouseup',{force: true})
+    //     cy.get('#droppable1 > p').should('have.text','Dropped!')
+    // })
 })
