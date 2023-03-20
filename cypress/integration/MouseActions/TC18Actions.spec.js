@@ -29,4 +29,10 @@ describe('Verify the mouse actions',()=>{
         cy.get('#droppable1').trigger('mousemove').trigger('mouseup',{force: true})
         cy.get('#droppable1 > p').should('have.text','Dropped!')
     })
+
+    it('Removeing _black value',()=>{
+        cy.get('')
+    })
+
+
 })
