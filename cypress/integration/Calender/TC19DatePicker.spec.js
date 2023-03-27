@@ -16,7 +16,7 @@ describe('Verify the date picker functionality',()=>{
         cy.log(fullMonth)
         //cy.log(fullMonth2)
         cy.log(year)
-        cy.visit('https://demo.automationtesting.in/Datepicker.html')
+         cy.visit('https://demo.automationtesting.in/Datepicker.html')
         cy.get('#datepicker1').click()
         function selectMonthYear(){
             cy.get('.ui-datepicker-title').then((el)=>{
