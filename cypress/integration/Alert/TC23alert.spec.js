@@ -1,7 +1,9 @@
 describe('Verify js alerts with cypress',()=>{
+    
     Cypress.on('uncaught:exception', (err, runnable) => {
         return false
     })
+
     it('Verify JS basic alert',()=>{
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
         cy.get('button[onclick="jsAlert()"]').click()

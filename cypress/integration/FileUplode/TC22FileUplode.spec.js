@@ -1,10 +1,11 @@
 
 
 describe('Verify Fileuplode in cypress',()=>{
-    it('Verify FileUplode',()=>{
-        let file = "C:/Users/MAHESH/OneDrive/Desktop/Cypress8pm/cypress/fixtures/Minskole.png"
+    it.only('Verify FileUplode',()=>{
+        let file = "Capture.PNG"
+        // cypress\fixtures\Capture.PNG
         cy.visit('https://the-internet.herokuapp.com/upload')
-        cy.get('#file-upload').selectFile(file)
+        cy.get('#file-upload').attachFile(file)
         cy.wait(4000)
         cy.get('#file-submit').click()
         cy.get('div > h3').should('have.text','File Uploaded!')
@@ -29,7 +30,7 @@ describe('Verify Fileuplode in cypress',()=>{
         cy.get('#uploaded-files').should('contain','Mahesh')
     })
 
-    it.only('Verify Uploded file NameChange',()=>{
+    it('Verify Uploded file NameChange',()=>{
         cy.visit('http://117.247.89.131/QMS1/BookingMaster.aspx')
         cy.get('#ctl00_aspxPageContent_txtBookingDate').type('11052024')
         // cy.get('#file-upload').attachFile({filePath:'Capture.PNG',fileName:'Mahesh.PNG'})
