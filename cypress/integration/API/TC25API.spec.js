@@ -28,13 +28,32 @@ describe('Verify the APIs',()=>{
         })
     })
 
-    it.only('Validate the GET Api for singal user',()=>{
+    it('Validate the GET Api for singal user',()=>{
         cy.request({
             method:"GET",
             url:"https://reqres.in/api/users?page=2"
         }).then((res)=>{
             cy.log(res)
             expect(res.body.data[0].email).to.eq('michael.lawson@reqres.in')
+        })
+    })
+
+    it.only('Validate the POST API',()=>{
+        cy.request({
+            method:"POST",
+            url:"https://reqres.in/api/users",
+            body:{
+                "name": "Mahesh",
+                "job": "Qa"
+            }
+        }).then((res)=>{
+            cy.log(res)
+            expect(res.status).to.eq(201)
+            expect(res.body).to.have.all.keys('id','job','createdAt','name')
+            expect(res.body.id).not.to.be.null
+            expect(res.body.job).not.to.be.null
+            expect(res.body.createdAt).not.to.be.null
+            expect(res.body.name).not.to.be.null
         })
     })
 })
