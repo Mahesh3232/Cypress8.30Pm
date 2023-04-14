@@ -16,7 +16,7 @@ describe('Validate Basic Auth Apis', () => {
         })
     })
 
-    it.only('Validate Basic auth Post Api', () => {
+    it('Validate Basic auth Post Api', () => {
         let email = `tenali.ramakrishna@15${Math.floor(Math.random() * 6)}ce.com`
         cy.request({
             method: "POST",
@@ -30,7 +30,7 @@ describe('Validate Basic Auth Apis', () => {
             headers: {
                 Authorization: "Bearer d94c4cc808661fa96c75b56d4f63cb80084a4324ac1f85d8761e6d59e7af8fd6"
             }
-        }).then((res)=>{
+        }).then((res) => {
             cy.log(email)
             cy.log(res)
             expect(res.status).to.eql(201)
@@ -38,7 +38,36 @@ describe('Validate Basic Auth Apis', () => {
         })
     })
 
-    it('Validate basic auth Put Api',()=>{
-        
+    it('Validate basic auth Put Api', () => {
+        cy.request({
+            method: "PUT",
+            url: "https://gorest.co.in/public/v2/users/978289",
+            body: {
+                "name": "Mahesh Aher",
+                "email": "Mahesh.aher1998@gmail.com",
+                "status": "active"
+            },
+            headers: {
+                Authorization: "Bearer d94c4cc808661fa96c75b56d4f63cb80084a4324ac1f85d8761e6d59e7af8fd6"
+            }
+        }).then((res)=>{
+            cy.log(res)
+            expect(res.status).to.eql(200)
+            expect(res.duration).to.be.lessThan(500)
+        })
+    })
+
+    it.only('Validate Delete basic Auth API',()=>{
+        cy.request({
+            method:"DELETE",
+            url:"https://gorest.co.in/public/v2/users/978436",
+            headers: {
+                Authorization: "Bearer d94c4cc808661fa96c75b56d4f63cb80084a4324ac1f85d8761e6d59e7af8fd6"
+            }
+        }).then((res)=>{
+            cy.log(res)
+            expect(res.status).to.eql(204)
+            expect(res.duration).to.be.lessThan(500)
+        })
     })
 })
