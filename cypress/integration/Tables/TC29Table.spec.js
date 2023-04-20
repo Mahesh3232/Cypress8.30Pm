@@ -9,7 +9,7 @@ describe('Validate the tables', () => {
     let sum = 0
     it('Verify the total sum price colum', () => {
         cy.get('[name="BookTable"]').find('tbody').children().each((el, index) => {
-            //cy.log(el.text())
+            cy.log(el.text())
             if (index != 0) {
                 //cy.log(el.children().last().text())
                 //cy.log(typeof(el.children().last().text()))
@@ -28,8 +28,9 @@ describe('Validate the tables', () => {
         cy.get('[name="BookTable"]').find('tbody').children().each((el,index)=>{
             //cy.log(el.text())
             if(index != 0 ){
+                //cy.log( el.children().eq(1).text())
                 cy.get(el).children().eq(1).should('have.text',autherName[index])
-            }      
+             }      
         })
     })
 

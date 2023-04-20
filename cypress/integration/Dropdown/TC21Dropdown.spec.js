@@ -20,7 +20,8 @@ describe('Verify the Dropdown in cypress',()=>{
     
     it.only('Verify the Dynyamic dropdown',()=>{
         cy.visit('https://codenboxautomationlab.com/practice/')
-        cy.get('#autocomplete').type('Can')
+        cy.StaticDrop('Ind','India')
+        // cy.get('#autocomplete').type('Can')
         // cy.get('.ui-menu-item > div').each((el)=>{
         //     text = el.text()
         //     cy.log(text)
@@ -28,6 +29,6 @@ describe('Verify the Dropdown in cypress',()=>{
         //         cy.get(el).click()
         //     }
         // })
-        cy.get('.ui-menu-item > div').contains('Canada').click()
+        //cy.get('.ui-menu-item > div').contains('Canada').click()
     })
 })
