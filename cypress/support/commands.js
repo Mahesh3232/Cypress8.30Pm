@@ -10,11 +10,18 @@
 //
 //
 // -- This is a parent command --
-Cypress.Commands.add('login', (email, password) => { 
+Cypress.Commands.add('login', (emailField,PassField,submitButton,email, password) => { 
     cy.visit('https://www.saucedemo.com/')
-    cy.get('#user-name').type(email)
-    cy.get('#password').type(password)
-    cy.get('input[name="login-button"]').click()
+    cy.get(emailField).type(email)
+    cy.get(PassField).type(password)
+    cy.get(submitButton).click()
+ })
+
+ Cypress.Commands.add('login2', (url,emailField,PassField,submitButton,email, password) => { 
+    cy.visit(url)
+    cy.get(emailField).type(email)
+    cy.get(PassField).type(password)
+    cy.get(submitButton).click()
  })
 
 
