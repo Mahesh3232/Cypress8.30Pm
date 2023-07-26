@@ -28,4 +28,7 @@ export class homepage{
     SocialMediaIcons(){
         cy.get(this.elements.SocialIcons).children().should('have.length',4)
     }
+
+
+    
 }
