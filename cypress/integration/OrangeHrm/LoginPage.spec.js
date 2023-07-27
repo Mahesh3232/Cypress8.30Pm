@@ -18,11 +18,15 @@ describe('Validate the login Page',()=>{
         cy.get('[class="oxd-alert oxd-alert--error"]').should('be.visible')
     })
 
-    it.only('Verify the forgot password functionality',()=>{
+    it('Verify the forgot password functionality',()=>{
         home.ForgotPassword()
     })
 
-    it.only('Verify the social media icons on homepage',()=>{
+    it('Verify the social media icons on homepage',()=>{
         home.SocialMediaIcons()
+    })
+
+    it('Varify Main Brand on homePage',()=>{
+        home.MainLogo()
     })
 })

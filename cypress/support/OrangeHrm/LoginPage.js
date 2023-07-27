@@ -5,14 +5,14 @@ export class homepage{
         LoginBtn:'[type="submit"]',
         cartIcon:'[class="oxd-brand-banner"]',
         ForgotPass:'.orangehrm-login-forgot-header',
-        SocialIcons:'[class="orangehrm-login-footer-sm"]'
+        SocialIcons:'[class="orangehrm-login-footer-sm"]',
+        MainLogo:'[alt="company-branding"]'
     }
 
     login(Username,Password){
         cy.get(this.elements.UsernameField).type(Username)
         cy.get(this.elements.PassField).type(Password)
         cy.get(this.elements.LoginBtn).click()
-
     }
 
     AfterValidation(){
@@ -29,6 +29,7 @@ export class homepage{
         cy.get(this.elements.SocialIcons).children().should('have.length',4)
     }
 
-
-    
+    MainLogo(){
+        cy.get(this.elements.MainLogo).should('be.visible')
+    }
 }
